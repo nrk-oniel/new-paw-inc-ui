@@ -1,0 +1,10 @@
+.page-main {
+  --bs-pagination-color: #55097D !important;
+  --bs-pagination-hover-color: #55097D !important;
+  --bs-pagination-focus-color: #55097D !important;
+  --bs-pagination-focus-box-shadow: none !important;
+  --bs-pagination-hover-bg: #e9ecef !important;
+  --bs-pagination-hover-border-color: #dee2e6 !important;
+  --bs-pagination-active-bg: #735AB8 !important;
+  --bs-pagination-active-border-color: #735AB8 !important;
+}

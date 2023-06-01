@@ -1,0 +1,79 @@
+/* header */
+.cal-year {
+  background-color: #735AB8;
+  color: white;
+  border-top: 2px solid #735AB8;
+}
+
+.cal-header { 
+  border-top: 2px solid #735AB8;
+  border-left: 2px solid #735AB8;
+  border-right: 2px solid #735AB8;
+}
+
+/* left section */
+.cal-month {
+  border-top: 1px solid white !important;
+  height: 82.2px
+}
+
+.cal-month-active {
+  --bs-btn-bg: #594199 !important;
+}
+
+/* right section */
+.cal-date-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border: 1px solid #735AB8;
+}
+
+.cal-date-container>div { 
+  border: 1px solid #735AB8;
+}
+
+/* date */
+.cal-date {
+  position: relative;
+  cursor: pointer;
+  min-height: 190px;
+}
+.cal-date-empty {
+  min-height: 190px;
+}
+.cal-date:hover {
+  background-color: #d5cdea;
+}
+
+.cal-date .extra {
+  position: absolute;
+  right: 0;
+  background-color: #735AB8;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  color: white;
+}
+
+.cal-date .date {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.cal-date .date-active{
+  background-color: #b9acdb;
+  border-radius: 50%;
+}
+
+.cal-time {
+  background-color: #E7DBFF;
+  margin-bottom: 6px;
+}
+
+
+

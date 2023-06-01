@@ -1,0 +1,119 @@
+body {
+  font-family: 'Aldrich', sans-serif;
+}
+
+.border-main {
+  color: #55097D;
+}
+
+.text-main {
+  color: #55097D;
+}
+
+.navbar-item {
+  color: #55097D !important;
+  margin: 10px;
+  padding: 0;
+}
+
+.navbar-item[data-active="true"] {
+  border-bottom: 2px solid #55097D;
+}
+
+.navbar-item:hover {
+  color: #55097D;
+}
+
+.btn-main {
+  --bs-btn-color: white;
+  --bs-btn-bg: #735AB8;
+  --bs-btn-hover-color: white;
+  --bs-btn-hover-bg: #594199;
+  --bs-btn-active-color: white;
+  --bs-btn-active-bg: #735AB8;
+  --bs-btn-active-border-color: #735AB8;
+  --bs-btn-disabled-color: white;
+  --bs-btn-disabled-bg: #735AB8;
+  --bs-btn-disabled-border-color: #735AB8;
+}
+
+.btn-second {
+  --bs-btn-color: #000;
+  --bs-btn-bg: #E7DBFF;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #d7c3fe;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: #E7DBFF;
+  --bs-btn-active-border-color: #E7DBFF;
+  --bs-btn-disabled-bg: #E7DBFF;
+  --bs-btn-disabled-border-color: #E7DBFF;
+}
+
+.btn-circle {
+  --bs-btn-border-radius: 50px;
+  --bs-btn-padding-x: 1.25rem;
+}
+.btn-square {
+  --bs-btn-border-radius: 0;
+  --bs-btn-padding-x: 2rem;
+}
+
+.form-control-square {
+  border-radius: 0;
+}
+
+.form-control-square:focus {
+  box-shadow: none;
+  border-color: #ced4da;
+}
+
+.btn-form-control {
+  border-radius: 0;
+  --bs-btn-border-color: #ced4da;
+  --bs-btn-color: #212529;
+  --bs-btn-bg: #fff;
+  --bs-btn-hover-color: #212529;
+  --bs-btn-hover-bg: #fff;
+  --bs-btn-hover-border-color: #ced4da;
+  --bs-btn-active-bg: #fff;
+  --bs-btn-active-border-color: #ced4da;
+}
+
+.input-group-text-main {
+  color: #D9D9D9;
+  background-color: #fff;
+  padding-right: 0.25rem;
+  border-radius: 0;
+}
+
+.content {
+  padding-top: 76px;
+  min-height: calc(100vh - 220px);
+}
+
+.navigation {
+  transition: all 200ms ease-in-out;
+  background-color: transparent;
+}
+.navigation-white {
+  background-color: white;
+}
+
+.selected-box {
+  background-color: #F0ECF9;
+  padding: 20px 16px;
+  border: 1px solid #ced4da;
+  min-height: 66px;
+}
+
+.bg-main {
+  background-color: #735AB8;
+}
+
+.bg-second {
+  background-color: #F7F6FA;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

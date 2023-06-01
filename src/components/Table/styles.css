@@ -1,0 +1,44 @@
+.tbl-main .row,.tbl-selector .row {
+  margin: 0;
+}
+
+/* style for selector */
+.tbl-selector {
+  border: 1px solid #ced4da;
+}
+
+.tbl-selector .thead {
+  border-bottom: 1px solid #ced4da;
+  padding: 6px;
+}
+
+.tbl-selector .trow {
+  cursor: pointer;
+  padding: 6px;
+}
+
+.tbl-selector .trow:hover {
+  background-color: rgba(170, 154, 212, 0.13);
+}
+
+.tbl-selector .active {
+  background-color: rgba(115, 90, 184, 0.2);
+}
+
+/* style for main */
+.tbl-main .thead {
+  padding: 16px 10px;
+  background-color: #F0ECF9;
+}
+
+.tbl-main .trow {
+  padding: 16px 10px;
+}
+
+.tbl-main .trow:nth-child(odd) {
+  background-color: #F0ECF9;
+}
+
+.tbl-main .trow:nth-child(even) {
+  background-color: #E6E3EF;
+}
