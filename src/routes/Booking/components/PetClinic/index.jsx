@@ -6,10 +6,11 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import Heading from '../../../../components/Heading';
 import ExtraInput from '../../../../components/Form/ExtraInput';
 import Table, { TABLE_MODEL } from '../../../../components/Table';
+import Maps from '../../../../components/Maps';
 import useAxios from '../../../../hooks/useAxios';
 
 import { API_FILTER_CLINIC } from '../../../../constants/api';
-import { normalizeClinic } from './helpers';
+import { normalizeClinic, distanceMarker } from './helpers';
 
 const constructURLParam = (clinicName) => {
   const urlParams = new URLSearchParams(
@@ -32,7 +33,15 @@ function PetClinic(props) {
     isLazy: true,
   });
 
+  // useEffect(() => {
+  //   request({
+  //     url: constructURLParam(''),
+  //   });
+  // }, []);
+
   const clinicData = normalizeClinic(response);
+
+  const clinicCoordinates = distanceMarker(response);
 
   const selectedData = value.clinic?.address || '';
 
@@ -48,6 +57,7 @@ function PetClinic(props) {
     rowConfig: [
       { text: 'Pet Clinic', key: 'name' },
       { text: 'Address', key: 'address' },
+      { text: 'Distance', key: 'distance' },
     ],
     data: clinicData,
     selectedId: value.clinic?.id,
@@ -64,6 +74,9 @@ function PetClinic(props) {
         <ExtraInput extra={<FontAwesomeIcon icon={faSearch} />} placeholder="Search" value={keyword} onChange={(e) => onChangeKeyword(e.target.value)} />
         {errorResponse && <span className="text-danger">{errorResponse}</span>}
       </Form.Group>
+      <div id="map" className="my-5">
+        <Maps data={clinicCoordinates} />
+      </div>
       <Table {...tableData} />
       <div className="mt-5 mb-2">
         <p className="mb-3">Chosen Pet Clinic</p>

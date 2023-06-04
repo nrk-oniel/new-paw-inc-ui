@@ -117,3 +117,7 @@ body {
 .cursor-pointer {
   cursor: pointer;
 }
+
+#map{
+  height: 500px;
+}

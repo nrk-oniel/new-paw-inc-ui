@@ -46,6 +46,10 @@ function UserProvider({ children }) {
         address: user.address || '',
         role: mapRole(user.role_id),
         clinicId: user.clinic_id || 0,
+        coordinates: {
+          lat: user.coordinates?.lat || 0,
+          lng: user.coordinates?.long || 0,
+        },
       });
     },
     [],
