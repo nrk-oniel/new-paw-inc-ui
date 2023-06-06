@@ -78,7 +78,7 @@ function Header() {
           </Nav.Link>
         ) : (
           <Nav.Link className="navbar-item" onClick={onClickLogin}>
-            Login
+            Login / Register
           </Nav.Link>
         )}
       </div>

@@ -1,6 +1,7 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useContext } from 'react';
 import { Form } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 import PasswordInput from '../../components/Form/PasswordInput';
 import { UserContext } from '../../contexts/UserContext';
@@ -9,7 +10,7 @@ import useAxios from '../../hooks/useAxios';
 import { API_LOGIN } from '../../constants/api';
 import ButtonWithLoad from '../../components/ButtonWithLoad';
 import { setAccessToken } from '../../helpers/storage';
-import { URL_HOME } from '../../constants/urls';
+import { URL_HOME, URL_REGISTER } from '../../constants/urls';
 
 const INITIAL_VALUE = {
   username: '',
@@ -61,6 +62,13 @@ function Login() {
           <div className="text-end mt-3">
             <ButtonWithLoad isLoading={isLoading} variant="main" className="px-5" onClick={doLogin}>Login</ButtonWithLoad>
           </div>
+          <h4 className="text-center">
+            {' '}
+            Don't have an account yet ?
+            {' '}
+            <Link to={URL_REGISTER}>Register Here</Link>
+            {' '}
+          </h4>
         </Form>
       </div>
     </div>

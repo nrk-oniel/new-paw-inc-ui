@@ -2,7 +2,8 @@
 /* eslint-disable global-require */
 import React, { useContext } from 'react';
 import {
-  GoogleMap, LoadScript, MarkerF, InfoWindowF,
+  GoogleMap, MarkerF, InfoWindowF,
+  useJsApiLoader,
 } from '@react-google-maps/api';
 import { UserContext } from '../../contexts/UserContext';
 import { MAPS_API_KEY } from '../../constants/map';
@@ -13,20 +14,14 @@ const containerStyle = {
   height: '100%',
 };
 
-// const center = {
-//   lat: -3.745,
-//   lng: -38.523,
-// };
-
-// const onLoad = () => {
-//   console.log(position);
-// };
-
 function Maps(props) {
   const { data } = props;
   const { userData } = useContext(UserContext);
+  const { isLoaded } = useJsApiLoader({
+    googleMapsApiKey: MAPS_API_KEY,
+  });
   return (
-    <LoadScript googleMapsApiKey={MAPS_API_KEY}>
+    isLoaded && (
       <GoogleMap
         id="maps"
         mapContainerStyle={containerStyle}
@@ -51,7 +46,7 @@ function Maps(props) {
           </div>
         </InfoWindowF>
       </GoogleMap>
-    </LoadScript>
+    )
   );
 }
 

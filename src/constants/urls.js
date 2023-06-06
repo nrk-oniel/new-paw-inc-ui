@@ -4,6 +4,7 @@ export const URL_HOME = '/home';
 export const URL_SERVICES = '/services';
 export const URL_PET_CARE = '/pet-care';
 export const URL_LOGIN = '/login';
+export const URL_REGISTER = '/register';
 export const URL_BOOKING = '/book-schedule';
 export const URL_BOOKING_LIST = '/booking-list';
 export const URL_BOOKING_HISTORY = '/booking-history';
@@ -19,7 +20,7 @@ export const URL_NOT_FOUND = '/not-found';
 // mapping Accessible Pages berdasarkan user role
 const PUBLIC_URL = [URL_HOME, URL_SERVICES, URL_PET_CARE, URL_NOT_FOUND];
 export const ACCESSIBLE_PAGES = {
-  [ROLES.DEFAULT]: [...PUBLIC_URL, URL_LOGIN],
+  [ROLES.DEFAULT]: [...PUBLIC_URL, URL_LOGIN, URL_REGISTER],
   [ROLES.ADM]: [...PUBLIC_URL, URL_USER_LIST, URL_ADD_USER, URL_EDIT_USER_ACCECSS],
   [ROLES.CUST]: [
     ...PUBLIC_URL,

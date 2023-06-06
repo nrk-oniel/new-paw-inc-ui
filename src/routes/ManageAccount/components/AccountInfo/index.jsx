@@ -1,6 +1,7 @@
 import { useContext, useEffect } from 'react';
 import { Form } from 'react-bootstrap';
 
+import { usePlacesWidget } from 'react-google-autocomplete';
 import { UserContext } from '../../../../contexts/UserContext';
 
 import Heading from '../../../../components/Heading';
@@ -12,6 +13,7 @@ import useFormData from '../../../../hooks/useFormData';
 import validateAccountInfo from '../../helpers/validateAccountInfo';
 import useAxios from '../../../../hooks/useAxios';
 import { API_UPDATE_PROFILE } from '../../../../constants/api';
+import { MAPS_API_KEY } from '../../../../constants/map';
 
 const INITIAL_VALUE = {
   name: '',
@@ -62,6 +64,19 @@ function AccountInfo() {
     });
   }, [userData]);
 
+  const { ref } = usePlacesWidget({
+    apiKey: MAPS_API_KEY,
+    onPlaceSelected: (place) => {
+      // console.log(place.formatted_address);
+      setValue('address', place.formatted_address);
+      // console.log(place.formatted_address);
+    },
+    options: {
+      types: ['address'],
+      componentRestrictions: { country: 'id' },
+    },
+  });
+
   const handleOnClickRefresh = () => {
     window.location.reload(true);
   };
@@ -95,7 +110,7 @@ function AccountInfo() {
         </Form.Group>
         <Form.Group className="mb-2">
           <Form.Label>Address</Form.Label>
-          <Form.Control type="text" className="form-control-square" value={formValue.address} onChange={(e) => setValue('address', e.target.value)} />
+          <Form.Control ref={ref} type="text" className="form-control-square" value={formValue.address} onChange={(e) => setValue('address', e.target.value)} />
           {formError?.address && <span className="text-danger">Please Fill Address</span>}
         </Form.Group>
         {errorResponse && <span className="text-danger">{errorResponse}</span>}

@@ -1,5 +1,6 @@
 // AUTH
 export const API_LOGIN = '/auth/login';
+export const API_REGISTER = '/auth/register';
 export const API_GET_PROFILE = '/auth/user-profile';
 export const API_UPDATE_PROFILE = '/auth/update';
 export const API_UPDATE_PASSWORD = '/auth/password/update';
