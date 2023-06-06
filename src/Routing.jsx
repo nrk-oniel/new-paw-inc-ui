@@ -17,6 +17,8 @@ import {
   URL_EDIT_USER_ROUTE,
   URL_ADD_USER,
   URL_SCHEDULE,
+  URL_SERVICES,
+  URL_PET_CARE,
 } from './constants/urls';
 
 import { UserProvider } from './contexts/UserContext';
@@ -36,6 +38,8 @@ import UserList from './routes/UserList';
 import AddUser from './routes/AddUser';
 import EditUser from './routes/EditUser';
 import NotFound from './routes/NotFound';
+import Service from './routes/Services';
+import Petcare from './routes/Pet Care';
 import { AxiosInstanceProvider } from './contexts/AxiosContext';
 import { BACKEND_URL } from './constants';
 
@@ -48,6 +52,12 @@ export const URL_ROUTES = [
   },
   {
     key: 'Boooking Page', path: URL_BOOKING, element: <Booking />,
+  },
+  {
+    key: 'Services Page', path: URL_SERVICES, element: <Service />,
+  },
+  {
+    key: 'Pet Care Page', path: URL_PET_CARE, element: <Petcare />,
   },
   {
     key: 'Booking List Page', path: URL_BOOKING_LIST, element: <BookingList />,

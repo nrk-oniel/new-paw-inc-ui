@@ -5,6 +5,7 @@ import { UserContext } from '../../contexts/UserContext';
 import SectionCustom from './components/SectionCustom';
 import SectionCheckPet from './components/SectionCheckPet';
 import SectionBook from './components/SectionBook';
+import SectionHomeLanding from './components/SectionHomeLanding';
 
 import { styleHomeJumbotron } from './styles';
 import ROLES from '../../constants/roles';
@@ -15,6 +16,7 @@ function Home() {
   return (
     <div>
       <div style={styleHomeJumbotron} />
+      {!isLogin && <SectionHomeLanding />}
       {isLogin && <SectionCustom />}
       {isLogin && userData.role === ROLES.CUST && (
         <>
