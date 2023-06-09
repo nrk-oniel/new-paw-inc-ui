@@ -73,7 +73,7 @@ function Header() {
             onClick={logout}
             role="presentation"
           >
-            <div style={{ marginRight: '6px' }}>{userData.role}</div>
+            <div style={{ marginRight: '6px' }}>{userData.name}</div>
             <FontAwesomeIcon icon={faSignOutAlt} />
           </Nav.Link>
         ) : (

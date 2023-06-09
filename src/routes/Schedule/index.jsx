@@ -1,12 +1,13 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 
 import Calendar from './components/Calendar';
 import { normalizeSchedule } from './helpers';
 import Details from './components/Details';
 import useAxios from '../../hooks/useAxios';
-import { API_GET_SCHEDULE } from '../../constants/api';
+import { API_GET_SCHEDULE_BY_CLINIC } from '../../constants/api';
 import Loading from '../../components/Loading';
 import Error from '../../components/Error';
+import { UserContext } from '../../contexts/UserContext';
 
 const INITIAL_VALUE = {
   year: new Date().getFullYear(),
@@ -14,20 +15,21 @@ const INITIAL_VALUE = {
   date: 0,
 };
 
-const constructUrl = (selectedDate) => {
+const constructUrl = (selectedDate, clinic) => {
   const { year, month } = selectedDate;
-
   // month tambah 1, karena di Date, januari itu 0
-  return `${API_GET_SCHEDULE}?year=${year}&month=${month + 1}`;
+  return `${API_GET_SCHEDULE_BY_CLINIC}?year=${year}&month=${month + 1}&clinicId=${clinic}`;
 };
 
 function Schedule() {
   const [selectedDate, setSelectedDate] = useState(INITIAL_VALUE);
+  const { userData } = useContext(UserContext);
+  const { clinicId } = userData;
 
   const {
     response, isLoading, error, request,
   } = useAxios({
-    url: constructUrl(selectedDate),
+    url: constructUrl(selectedDate, clinicId),
     method: 'GET',
   });
 
@@ -38,7 +40,7 @@ function Schedule() {
     if (key === 'year' || key === 'month') {
       // hit api ketika filter berubah (bulan dan tahun)
       request({
-        url: constructUrl({ year, month }),
+        url: constructUrl({ year, month }, clinicId),
       });
       // reset biar user pilih tanggal lagi
       setSelectedDate((prev) => ({

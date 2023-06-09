@@ -16,6 +16,7 @@ export const API_DELETE_STAFF = '/staff-delete';
 export const API_APPROVE_TICKET = '/staff/ticket/approve';
 export const API_REJECT_TICKET = '/staff/ticket/reject';
 export const API_GET_SCHEDULE = '/staff/schedule';
+export const API_GET_SCHEDULE_BY_CLINIC = '/staff/schedule-by-clinic';
 export const API_ADD_SCHEDULE = '/staff/schedule-create';
 
 // CUSTOMER
