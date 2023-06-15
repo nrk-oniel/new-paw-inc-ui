@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Form } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -33,11 +33,11 @@ function PetClinic(props) {
     isLazy: true,
   });
 
-  // useEffect(() => {
-  //   request({
-  //     url: constructURLParam(''),
-  //   });
-  // }, []);
+  useEffect(() => {
+    request({
+      url: constructURLParam(''),
+    });
+  }, []);
 
   const clinicData = normalizeClinic(response);
 
