@@ -38,7 +38,7 @@ export const normalizeBooking = (response) => {
 
     return {
       id: ticket.id || 0,
-      status: mapBooking(ticket.status),
+      status: mapBooking(+ticket.status),
       clinic: {
         name: clinic.clinic_name || '',
         address: clinic.clinic_address || '',
