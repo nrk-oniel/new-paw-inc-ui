@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -30,14 +30,8 @@ function PetClinic(props) {
     response, isLoading, error: errorResponse, request,
   } = useAxios({
     method: 'GET',
-    isLazy: true,
+    url: API_FILTER_CLINIC,
   });
-
-  useEffect(() => {
-    request({
-      url: constructURLParam(''),
-    });
-  }, []);
 
   const clinicData = normalizeClinic(response);
 
