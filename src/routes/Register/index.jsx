@@ -63,6 +63,7 @@ function Register() {
     <div className="content d-flex justify-content-center">
       <div className="mt-5 w-50 d-flex justify-content-center">
         <Form className="w-100">
+          <h2 className="text-center">Register</h2>
           {/* Username */}
           <Form.Group className="mb-2">
             <Form.Label>Username</Form.Label>
