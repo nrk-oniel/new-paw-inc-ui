@@ -77,7 +77,11 @@ function Header() {
             <FontAwesomeIcon icon={faSignOutAlt} />
           </Nav.Link>
         ) : (
-          <Nav.Link className="navbar-item" onClick={onClickLogin}>
+          <Nav.Link
+            className="navbar-item"
+            onClick={onClickLogin}
+            data-active={pathname.includes('/login') || pathname.includes('/register') ? true : ''}
+          >
             Login / Register
           </Nav.Link>
         )}
