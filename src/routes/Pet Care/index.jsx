@@ -98,6 +98,10 @@ function Petcare() {
                   id="buttonReadMoreService"
                   src={require('./assets/button.png')}
                   alt="button"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.open('https://kb.rspca.org.au/knowledge-base/what-do-i-need-to-know-before-i-get-a-new-pet/', '_blank');
+                  }}
                   fluid
                 />
               </h2>
