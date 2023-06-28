@@ -17,35 +17,39 @@ function Footer() {
   return (
     <footer className="text-white p-5" style={styleFooter}>
       <Container>
-        <section className="d-flex justify-content-between">
-          <div>
-            <h4 className="fw-bold mb-4">
-              Contact
-            </h4>
-            <div className="d-flex">
-              <div className="d-flex flex-column">
-                <span>Call Center</span>
-                <span>(Whatsapp):</span>
-                <span>081234567891</span>
+        <div>
+          <h1>Contact</h1>
+          <div className="row">
+            <div className="col">
+              <div className="d-flex">
+                <div className="d-flex flex-column">
+                  <span>Call Center</span>
+                  <span>(Whatsapp):</span>
+                  <span>081234567891</span>
+                </div>
+                <div className="d-flex flex-column" style={styleFooterEmail}>
+                  <span>Email:</span>
+                  <span>admin@logo.id</span>
+                  <span>helpdesk@logo.id</span>
+                </div>
               </div>
-              <div className="d-flex flex-column" style={styleFooterEmail}>
-                <span>Email:</span>
-                <span>admin@logo.id</span>
-                <span>helpdesk@logo.id</span>
+            </div>
+            <div className="col">
+              <div className="d-flex flex-row-reverse py-3">
+                {SOCIAL.map((item) => {
+                  const { key, href, icon } = item;
+                  return (
+                    <a href={href} style={styleIcon} key={key}>
+                      {icon}
+                    </a>
+                  );
+                })}
               </div>
             </div>
           </div>
-          <div className="d-flex align-items-center">
-            <div className="d-flex">
-              {SOCIAL.map((item) => {
-                const { key, href, icon } = item;
-                return <a href={href} style={styleIcon} key={key}>{icon}</a>;
-              })}
-            </div>
+          <div className="pt-4 text-center">
+            Copyright: ©2023 All rights reserved by Logo
           </div>
-        </section>
-        <div className="pt-4 text-center">
-          Copyright: ©2023 All rights reserved by Logo
         </div>
       </Container>
     </footer>

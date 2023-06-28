@@ -1,6 +1,5 @@
 export const styleFooter = {
   backgroundColor: '#211E1E',
-  height: '270px',
 };
 
 export const styleFooterEmail = {

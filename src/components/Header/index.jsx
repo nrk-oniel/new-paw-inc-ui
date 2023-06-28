@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Nav, Navbar } from 'react-bootstrap';
+import { Nav, Navbar, Container } from 'react-bootstrap';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
@@ -39,53 +39,66 @@ function Header() {
   }, [navBg, setNavBg]);
 
   return (
-    <Navbar className={`fixed-top w-100 px-3 ${navStyle}`}>
-      <Navbar.Brand onClick={onClickLogo}>
-        <img
-          style={styImage}
-          src={logo}
-          height={50}
-          className="d-inline-block align-top"
-          alt="Paw Inc Logo"
-        />
-      </Navbar.Brand>
-      <Nav className="me-auto">
-        {navMenu.map((navItem) => {
-          const { label, url } = navItem;
-          const onClick = () => navigate(url);
-          const isActive = pathname.startsWith(url);
-          return (
-            <Nav.Link
-              data-active={isActive}
-              className="navbar-item"
-              onClick={onClick}
-              key={label}
-            >
-              {label}
-            </Nav.Link>
-          );
-        })}
-      </Nav>
-      <div className="text-main">
-        {isLogin ? (
-          <Nav.Link
-            className="navbar-item d-flex align-items-center"
-            onClick={logout}
-            role="presentation"
-          >
-            <div style={{ marginRight: '6px' }}>{userData.name}</div>
-            <FontAwesomeIcon icon={faSignOutAlt} />
-          </Nav.Link>
-        ) : (
-          <Nav.Link
-            className="navbar-item"
-            onClick={onClickLogin}
-            data-active={pathname.includes('/login') || pathname.includes('/register') ? true : ''}
-          >
-            Login / Register
-          </Nav.Link>
-        )}
-      </div>
+    <Navbar
+      collapseOnSelect
+      expand="lg"
+      className={`fixed-top ${navStyle}`}
+    >
+      <Container fluid>
+        <Navbar.Brand onClick={onClickLogo}>
+          <img
+            style={styImage}
+            src={logo}
+            height={50}
+            className="d-inline-block align-top"
+            alt="Paw Inc Logo"
+          />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+            {navMenu.map((navItem) => {
+              const { label, url } = navItem;
+              const onClick = () => navigate(url);
+              const isActive = pathname.startsWith(url);
+              return (
+                <Nav.Link
+                  data-active={isActive}
+                  className="navbar-item"
+                  onClick={onClick}
+                  key={label}
+                >
+                  {label}
+                </Nav.Link>
+              );
+            })}
+          </Nav>
+          <div className="text-main">
+            {isLogin ? (
+              <Nav.Link
+                className="navbar-item d-flex align-items-center"
+                onClick={logout}
+                role="presentation"
+              >
+                <div style={{ marginRight: '6px' }}>{userData.name}</div>
+                <FontAwesomeIcon icon={faSignOutAlt} />
+              </Nav.Link>
+            ) : (
+              <Nav.Link
+                className="navbar-item"
+                onClick={onClickLogin}
+                data-active={
+                  pathname.includes('/login') || pathname.includes('/register')
+                    ? true
+                    : ''
+                }
+              >
+                Login / Register
+              </Nav.Link>
+            )}
+          </div>
+        </Navbar.Collapse>
+      </Container>
     </Navbar>
   );
 }

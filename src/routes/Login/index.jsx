@@ -65,7 +65,7 @@ function Login() {
           </div>
           <h4 className="text-center">
             {' '}
-            Don't have an account yet ?
+            Don't have a member account yet?
             {' '}
             <Link to={URL_REGISTER}>Register Here</Link>
             {' '}
