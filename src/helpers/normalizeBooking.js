@@ -25,7 +25,6 @@ export const normalizeBooking = (response) => {
     const ticket = { ...item };
     const clinic = { ...ticket.clinic };
     const schedule = { ...ticket.schedule };
-
     const monthIdx = schedule.month - 1;
     const dateString = `${schedule.date} ${MONTHS[monthIdx]} ${schedule.year}`;
 
@@ -34,11 +33,11 @@ export const normalizeBooking = (response) => {
     const paymentDate = `${date} ${MONTHS[Number(month) - 1]} ${year}`;
 
     const time = `${schedule.hour}`.padStart(2, '0');
-    const minute = `${schedule.hour}`.padStart(2, '0');
+    const minute = `${schedule.minute}`.padStart(2, '0');
 
     return {
       id: ticket.id || 0,
-      status: mapBooking(ticket.status),
+      status: mapBooking(+ticket.status),
       clinic: {
         name: clinic.clinic_name || '',
         address: clinic.clinic_address || '',

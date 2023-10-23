@@ -91,6 +91,7 @@ function UserList() {
       name: user.username || '',
       email: user.email || '',
       phone: user.phone_number || '',
+      address: user.address || '',
       role: mapRole(user.role_id),
       action: (
         <Button variant="main" className="btn-square" onClick={onClickEdit}>
@@ -106,6 +107,7 @@ function UserList() {
       { text: 'Clinic Name', key: 'name' },
       { text: 'Email', key: 'email' },
       { text: 'Phone Number', key: 'phone' },
+      { text: 'Address', key: 'address' },
       { text: 'Edit', key: 'action', colProps: { xs: 2 } },
     ],
     data: userList,

@@ -4,7 +4,7 @@ import Calendar from './components/Calendar';
 import { normalizeSchedule } from './helpers';
 import Details from './components/Details';
 import useAxios from '../../hooks/useAxios';
-import { API_GET_SCHEDULE } from '../../constants/api';
+import { API_GET_SCHEDULE_BY_CLINIC } from '../../constants/api';
 import Loading from '../../components/Loading';
 import Error from '../../components/Error';
 
@@ -16,9 +16,8 @@ const INITIAL_VALUE = {
 
 const constructUrl = (selectedDate) => {
   const { year, month } = selectedDate;
-
   // month tambah 1, karena di Date, januari itu 0
-  return `${API_GET_SCHEDULE}?year=${year}&month=${month + 1}`;
+  return `${API_GET_SCHEDULE_BY_CLINIC}?year=${year}&month=${month + 1}`;
 };
 
 function Schedule() {

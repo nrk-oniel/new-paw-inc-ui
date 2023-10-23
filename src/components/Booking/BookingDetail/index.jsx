@@ -10,7 +10,7 @@ const MAP_COLOR_BOOK = {
 
 function BookingDetail(props) {
   const { data, mode } = props;
-
+  // console.log(data);
   return (
     <Row>
       <Col>
@@ -33,7 +33,7 @@ function BookingDetail(props) {
           <Col>{`: ${data.clinic.name}`}</Col>
         </Row>
       </Col>
-      {Boolean(mode === BOOKING_MODE.HIST) && (
+      {Boolean(mode === BOOKING_MODE.HIST && data.status !== 'EXPIRED') && (
         <Col>
           <Row>
             <Col>Payment Date</Col>

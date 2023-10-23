@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Col, Form, Row,
 } from 'react-bootstrap';
@@ -43,6 +43,15 @@ function BookingSchedule(props) {
   const schdData = normalizeSchedule(response);
 
   const selectedData = value.schedule ? `${value.schedule.date} - ${value.schedule.time} - ${value.schedule.doctor}` : '';
+
+  useEffect(() => {
+    setFilter({ date: '', time: '' });
+    if (value.clinic?.id !== 0 && value.clinic?.id !== undefined) {
+      request({
+        url: constructURLParam({ date: '', time: '' }, value),
+      });
+    }
+  }, [value.clinic?.id]);
 
   const handleOnClickFilter = () => {
     if (!value.clinic?.id) {

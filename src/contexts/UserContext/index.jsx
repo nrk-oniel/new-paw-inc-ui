@@ -44,8 +44,12 @@ function UserProvider({ children }) {
         email: user.email || '',
         phone: user.phone_number || '',
         address: user.address || '',
-        role: mapRole(user.role_id),
+        role: mapRole(+user.role_id),
         clinicId: user.clinic_id || 0,
+        coordinates: {
+          lat: user.coordinates?.lat || 0,
+          lng: user.coordinates?.long || 0,
+        },
       });
     },
     [],

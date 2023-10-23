@@ -1,5 +1,5 @@
 body {
-  font-family: 'Aldrich', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .border-main {
@@ -117,3 +117,32 @@ body {
 .cursor-pointer {
   cursor: pointer;
 }
+
+#map{
+  height: 500px;
+}
+
+.about-us {
+  background: #FDF0FF;
+}
+
+#advantage {
+  width: 100% !important;
+  background: #FDF0FF !important;
+}
+
+#serviceContainer {
+  width: 100% !important;
+  background: #FDF0FF !important;
+}
+
+#buttonReadMoreService{
+  cursor: pointer;
+}
+
+#imageContainer {
+  /* max-width: 150px;
+  max-height: 150px; */
+  position: relative;
+}
+

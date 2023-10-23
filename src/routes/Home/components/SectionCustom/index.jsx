@@ -33,12 +33,23 @@ function SectionCustom() {
   const handleCtaClick = () => navigate(url);
 
   return (
-    <div className="d-flex justify-content-between align-items-center py-5 px-4">
-      <div className="text-center w-75">
-        <h2>{title}</h2>
-        <Button variant="main" size="lg" className="btn-circle mt-2" onClick={handleCtaClick}>{ctaText}</Button>
+    <div className="row">
+      <div className="col text-center my-auto">
+        <div className="w-100 h-100">
+          <h2>{title}</h2>
+          <Button
+            variant="main"
+            size="lg"
+            className="btn-circle mt-2"
+            onClick={handleCtaClick}
+          >
+            {ctaText}
+          </Button>
+        </div>
       </div>
-      <img src={catImage} alt="cat" height={450} className="my-3" />
+      <div className="col">
+        <img src={catImage} alt="cat" className="my-3 img-fluid" />
+      </div>
     </div>
   );
 }
