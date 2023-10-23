@@ -48,6 +48,7 @@ function Login() {
     <div className="content d-flex justify-content-center">
       <div className="mt-5 w-50 d-flex justify-content-center">
         <Form className="w-100">
+          <h2 className="text-center">Login</h2>
           <Form.Group className="mb-2">
             <Form.Label>Username</Form.Label>
             <Form.Control type="text" className="form-control-square" value={formValue.username} onChange={(e) => setValue('username', e.target.value)} />
@@ -64,7 +65,7 @@ function Login() {
           </div>
           <h4 className="text-center">
             {' '}
-            Don't have an account yet ?
+            Don't have a member account yet?
             {' '}
             <Link to={URL_REGISTER}>Register Here</Link>
             {' '}
